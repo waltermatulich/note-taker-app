@@ -10,8 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Define routes
-app.use("/", htmlRoute);
 app.use("/api", apiRoute);
+app.use("/", htmlRoute);
+
 
 // Start the server
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));

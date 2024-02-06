@@ -1,14 +1,19 @@
-const express = require("express");
-const path = require("path");
+const router = require("express").Router();
+const store = require("../db/store");
 
-const router = express.Router();
 
-router.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/notes.html'));
+
+router.get("/notes", async (req, res) => {
+    const notesData = await store.getNotes()
+    res.json(notesData)
 });
 
-router.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+router.post("/notes", async (req, res) => {
+    const newNote = await store.addNotes(req.body)
+    res.json(newNote)
+})
+router.delete("/notes/:id", async (req, res) => {
+    await store.removeNote(req.params.id)
+    res.json("success")
 });
-
 module.exports = router;
