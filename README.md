@@ -1,2 +1,2 @@
 # note-taker-app
-An app where you are prompted with existing notes on the left hand colum and new notes on the right hand column
+An app where you are prompted two blank text boxes. Title box on the top and a body box underneath. There's a column on the left hand side where there will be existing notes and in that column there will be a red garbage can to where if you press it, there will be a delete function enabled. And finally, when you type in whatever it is you input in the text boxes and you save it. It will save it to the left hand colum which I have previously mentioned. Cheers!
